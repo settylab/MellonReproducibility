@@ -9,7 +9,6 @@ ls "$in_path" | while read ds_name; do
     ds_path="$in_path/$ds_name"
     n=$(ls "$ds_path" | wc -l)
     n_landmarks=5000
-    #[[ "$ds_name" == ips ]] && n_landmarks=20000
     
     for i in $(seq 0 $(( n - 1 ))); do
         export SLURM_ARRAY_TASK_ID=$i
